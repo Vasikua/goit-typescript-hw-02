@@ -1,0 +1,15 @@
+.searchField {
+  width: 100%;
+  height: 50px;
+  background-color: rgb(27, 27, 179);
+  padding: 10px;
+  margin: 0;
+}
+
+.input {
+  border: none;
+  margin-right: 5px;
+  border-radius: 5px;
+  width: 250px;
+  height: 30px;
+}
