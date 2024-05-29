@@ -31,7 +31,7 @@ export default function SearchBar({onSearch}) {
         <header className={css.searchField} >
           <form className={css.form} onSubmit={handleSubmit}>
               <input className={css.input} type="text"  name="query"/>
-              <button type="submit">Search</button>
+              <button type="submit" className={css.button}>Search</button>
           </form>
         </header>
         </>

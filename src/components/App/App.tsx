@@ -9,10 +9,20 @@ import ImageModal from '../imageModal/ImageModal';
 
 import './App.css';
 
+interface Img{
+  id: number;
+  urls:{
+    regular: string;
+    small: string;
+  }
+    src: string;
+    alt: string;
+  }
+
 function App() {
   
   const [openModal, setOpenModal] = useState<boolean>(false);
-  const [images, setImages] = useState<string[]>([]);
+  const [images, setImages] = useState<Img[]>([]);
   const [isloading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<boolean>(false);
   const [page, setPage] = useState<number>(1);
@@ -26,11 +36,11 @@ function App() {
     setImgId(id);
   };
   
-  const handleOpenModal = () => {
+  const handleOpenModal = ():void => {
     setOpenModal(true);
   };
   
-  const handleCloseModal = () => {
+  const handleCloseModal = ():void => {
     setOpenModal(false);
     setImgId(null);
   };
@@ -41,10 +51,13 @@ function App() {
     setImages([]);
   };  
 
-  const handleLoadMore = () => {
+  const handleLoadMore = ():void => {
     setPage(page + 1);
   };
   
+
+
+
 
   useEffect(() => {
     
@@ -52,7 +65,7 @@ function App() {
       setTotal(0);
       return;
     }
-    async function getImages() {
+    async function getImages() : Promise<void> {
       try {
         setError(false);
         setLoading(true);
