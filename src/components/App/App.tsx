@@ -27,11 +27,11 @@ function App() {
     setImgId(id);
   };
   
-  const handleOpenModal = ():void => {
+  const handleOpenModal = ()=> {
     setOpenModal(true);
   };
   
-  const handleCloseModal = ():void => {
+  const handleCloseModal = () => {
     setOpenModal(false);
     setImgId(null);
   };
@@ -42,7 +42,7 @@ function App() {
     setImages([]);
   };  
 
-  const handleLoadMore = ():void => {
+  const handleLoadMore = () => {
     setPage(page + 1);
   };
   
