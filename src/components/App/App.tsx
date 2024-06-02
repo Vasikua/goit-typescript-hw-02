@@ -56,7 +56,7 @@ function App() {
       try {
         setError(false);
         setLoading(true);
-        const { result, total}:respons = await FetchImages(query, page);
+        const { result, total}:response = await FetchImages(query, page);
         setTotal(total);
         setImages((prevImages) => {
           return [...prevImages, ...result];

@@ -2,15 +2,13 @@ import css from './SearchBar.module.css';
 import toast, { Toaster } from 'react-hot-toast';
 import React, {FC} from 'react';
 import { FormEvent } from "react";
-interface SearchBarProps{
-  onSearch: (newQuery:string)=>void;
-}
+import { SearchBarProps } from "../../types";
 const SearchBar:FC<SearchBarProps> = ({onSearch}) =>{
  
 
   const handleSubmit = (event:FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const query = event.target.elements.query.value.trim();
+    const query:string = event.target.elements.query.value.trim();
     if (query.length === 0) {
       toast.success('Please type something in the searchfield', {
   style: {

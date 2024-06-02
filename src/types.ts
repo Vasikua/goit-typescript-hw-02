@@ -28,6 +28,10 @@ export interface ImageGalleryProps {
   onId: () => void;
 }
 export interface response {
-  result: ImgProps;
+  result: ImgProps[];
   total: number;
+}
+
+export interface SearchBarProps{
+  onSearch: (newQuery:string)=>void;
 }
