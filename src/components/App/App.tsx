@@ -1,6 +1,7 @@
 import { useState, useEffect} from 'react';
 import { FetchImages } from '../../../img-request';
 import { ImgProps } from "../../types";
+import {response} from '../../types'
 import ImageGallery from '../imagesList/ImageGallery';
 import SearchBar from '../searchBar/SearchBar';
 import Loader from '../loader/Loader';
@@ -17,7 +18,7 @@ function App() {
   const [error, setError] = useState<boolean>(false);
   const [page, setPage] = useState<number>(1);
   const [query, setQuery] = useState<string>('');
-  const [total, setTotal] = useState<number>(0);
+  const [total, setTotal] = useState<number | null>(0);
   const [imgId, setImgId] = useState<number | null>(0);
   
   const modImg = images.find((img) => img.id === imgId)?.urls.regular;
@@ -26,11 +27,11 @@ function App() {
     setImgId(id);
   };
   
-  const handleOpenModal = () => {
+  const handleOpenModal = ():void => {
     setOpenModal(true);
   };
   
-  const handleCloseModal = () => {
+  const handleCloseModal = ():void => {
     setOpenModal(false);
     setImgId(null);
   };
@@ -41,7 +42,7 @@ function App() {
     setImages([]);
   };  
 
-  const handleLoadMore = () => {
+  const handleLoadMore = ():void => {
     setPage(page + 1);
   };
   
@@ -55,7 +56,7 @@ function App() {
       try {
         setError(false);
         setLoading(true);
-        const { result, total} = await FetchImages(query, page);
+        const { result, total}:respons = await FetchImages(query, page);
         setTotal(total);
         setImages((prevImages) => {
           return [...prevImages, ...result];

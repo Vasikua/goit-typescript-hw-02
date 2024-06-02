@@ -27,3 +27,7 @@ export interface ImageGalleryProps {
   onClick: () => void;
   onId: () => void;
 }
+export interface response {
+  result: ImgProps;
+  total: number;
+}
