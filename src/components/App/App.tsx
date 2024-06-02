@@ -1,6 +1,6 @@
 import { useState, useEffect} from 'react';
 import { FetchImages } from '../../../img-request';
-import { Img } from "../../types";
+import { ImgProps } from "../../types";
 import ImageGallery from '../imagesList/ImageGallery';
 import SearchBar from '../searchBar/SearchBar';
 import Loader from '../loader/Loader';
@@ -12,7 +12,7 @@ import './App.css';
 function App() {
   
   const [openModal, setOpenModal] = useState<boolean>(false);
-  const [images, setImages] = useState<Img[]>([]);
+  const [images, setImages] = useState<ImgProps[]>([]);
   const [isloading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<boolean>(false);
   const [page, setPage] = useState<number>(1);

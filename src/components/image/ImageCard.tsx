@@ -1,12 +1,9 @@
 import css from './ImageCard.module.css'
 import React, {FC} from 'react';
-import {Img} from '../../types';
+// import { Img } from '../../types';
+import { ImageCardProps } from '../../types';
 
-interface ImageCardProps { 
-data:Img;
-onClick:()=>void ;
-onId: (id:number)=>void;
-}
+
 
 const ImageCard :FC<ImageCardProps> = ({data: { id, alt_description, urls: { small } }, onClick, onId }) => {
     

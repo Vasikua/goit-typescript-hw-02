@@ -1,11 +1,7 @@
 import ReactModal from 'react-modal';
 import React, {FC} from 'react';
 import css from './ImageModal.module.css';
-interface ImageModalProps{
-    openModal:()=>void;
-    CloseModal:()=>void;
-    id: string;
-}
+import { ImageModalProps } from '../../types'; 
 
 const ImageModal:FC<ImageModalProps> = ({ openModal, CloseModal, id }) =>{
      ReactModal.setAppElement('#root')

@@ -1,6 +1,5 @@
-
 import { ProgressBar } from 'react-loader-spinner';
-export default function Loader() {
+const Loader = () => {
     
 return (
     <>
@@ -18,3 +17,5 @@ return (
     </>
   );
 }
+
+export default Loader;
