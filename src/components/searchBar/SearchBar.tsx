@@ -8,7 +8,7 @@ const SearchBar:FC<SearchBarProps> = ({onSearch}) =>{
 
   const handleSubmit = (event:FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const query = (event.target as HTMLFormElement).elements.query.value.trim();
+    const query = (event.target as HTMLInputElement).value.trim();
     if (query.length === 0) {
       toast.success('Please type something in the searchfield', {
   style: {
