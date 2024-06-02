@@ -1,9 +1,14 @@
 import css from './SearchBar.module.css';
-import toast, {Toaster} from 'react-hot-toast';
-export default function SearchBar({onSearch}) {
+import toast, { Toaster } from 'react-hot-toast';
+import React, {FC} from 'react';
+import { FormEvent } from "react";
+interface SearchBarProps{
+  onSearch: (newQuery:string)=>void;
+}
+const SearchBar:FC<SearchBarProps> = ({onSearch}) =>{
  
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event:FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const query = event.target.elements.query.value.trim();
     if (query.length === 0) {
@@ -38,3 +43,4 @@ export default function SearchBar({onSearch}) {
     )
 }
 
+export default SearchBar;

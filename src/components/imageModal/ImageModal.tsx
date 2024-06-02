@@ -1,7 +1,13 @@
 import ReactModal from 'react-modal';
+import React, {FC} from 'react';
 import css from './ImageModal.module.css';
+interface ImageModalProps{
+    openModal:()=>void;
+    CloseModal:()=>void;
+    id: string;
+}
 
-export default function ImageModal({ openModal, CloseModal, id }) {
+const ImageModal:FC<ImageModalProps> = ({ openModal, CloseModal, id }) =>{
      ReactModal.setAppElement('#root')
         return (
                 <>
@@ -43,4 +49,4 @@ export default function ImageModal({ openModal, CloseModal, id }) {
 }
 
 
-  
+export default ImageModal;

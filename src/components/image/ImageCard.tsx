@@ -1,5 +1,14 @@
 import css from './ImageCard.module.css'
-export default function ImageCard({data: { id, alt_description, urls: { small } }, onClick, onId }) {
+import React, {FC} from 'react';
+import {Img} from '../../types';
+
+interface ImageCardProps { 
+data:Img;
+onClick:()=>void ;
+onId: (id:number)=>void;
+}
+
+const ImageCard :FC<ImageCardProps> = ({data: { id, alt_description, urls: { small } }, onClick, onId }) => {
     
   return (<>
             <div className={css.cotainer} >
@@ -14,3 +23,6 @@ export default function ImageCard({data: { id, alt_description, urls: { small } 
             </div>
          </>)
 }
+
+
+export default ImageCard;

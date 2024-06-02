@@ -1,23 +1,13 @@
 import { useState, useEffect} from 'react';
 import { FetchImages } from '../../../img-request';
+import { Img } from "../../types";
 import ImageGallery from '../imagesList/ImageGallery';
 import SearchBar from '../searchBar/SearchBar';
 import Loader from '../loader/Loader';
 import LoadMoreBtn from '../loadMoreBtn/LoadMoreBtn';
 import ImageModal from '../imageModal/ImageModal';
-
-
 import './App.css';
 
-interface Img{
-  id: number;
-  urls:{
-    regular: string;
-    small: string;
-  }
-    src: string;
-    alt: string;
-  }
 
 function App() {
   
@@ -32,15 +22,15 @@ function App() {
   
   const modImg = images.find((img) => img.id === imgId)?.urls.regular;
   
-  const handleImgId = (id:number):void => {
+  const handleImgId = (id:number) => {
     setImgId(id);
   };
   
-  const handleOpenModal = ():void => {
+  const handleOpenModal = () => {
     setOpenModal(true);
   };
   
-  const handleCloseModal = ():void => {
+  const handleCloseModal = () => {
     setOpenModal(false);
     setImgId(null);
   };
@@ -51,21 +41,17 @@ function App() {
     setImages([]);
   };  
 
-  const handleLoadMore = ():void => {
+  const handleLoadMore = () => {
     setPage(page + 1);
   };
   
-
-
-
-
   useEffect(() => {
     
     if (query === "") {
       setTotal(0);
       return;
     }
-    async function getImages() : Promise<void> {
+    async function getImages(){
       try {
         setError(false);
         setLoading(true);

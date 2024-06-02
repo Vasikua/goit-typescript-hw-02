@@ -1,7 +1,7 @@
 .searchField {
   border-radius: 7px;
   background-color: rgb(27, 27, 179);
-  padding: 10px;
+  padding: 10px 50px 10px 50px;
   margin: 0;
 }
 .form {
