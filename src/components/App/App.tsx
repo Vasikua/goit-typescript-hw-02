@@ -20,7 +20,7 @@ function App() {
 
   const modImg = images.find((img) => img.id === imgId)?.urls.regular;
 
-  const handleImgId = (id: number) => {
+  const handleImgId = (id:number):void => {
     setImgId(id);
   };
 
