@@ -11,23 +11,23 @@ export interface ImgProps{
   
 export interface ImageCardProps { 
 data:ImgProps;
-onClick:()=>void ;
-onId: (id:number)=>void;
+onClick: () => void ;
+onId: (id: number) => void;
 }
 
 
 export interface ImageModalProps{
-    openModal:()=>void;
-    CloseModal:()=>void;
-    id: string;
+    openModal: boolean;
+    CloseModal: () => void;
+    id: string | undefined;
 }
 
 export interface ImageGalleryProps {
-  data: ImgProps;
+  data: ImgProps[];
   onClick: () => void;
   onId: () => void;
 }
-export interface response {
+export interface Response {
   result: ImgProps[];
   total: number;
 }

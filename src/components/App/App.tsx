@@ -1,7 +1,7 @@
 import { useState, useEffect} from 'react';
 import { FetchImages } from '../../../img-request';
 import { ImgProps } from "../../types";
-import {response} from '../../types'
+import {Response} from '../../types'
 import ImageGallery from '../imagesList/ImageGallery';
 import SearchBar from '../searchBar/SearchBar';
 import Loader from '../loader/Loader';
@@ -56,7 +56,7 @@ function App() {
       try {
         setError(false);
         setLoading(true);
-        const { result, total}:response = await FetchImages(query, page);
+        const {result, total}:Response = await FetchImages(query, page);
         setTotal(total);
         setImages((prevImages) => {
           return [...prevImages, ...result];
