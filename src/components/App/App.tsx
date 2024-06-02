@@ -18,7 +18,7 @@ function App() {
   const [error, setError] = useState<boolean>(false);
   const [page, setPage] = useState<number>(1);
   const [query, setQuery] = useState<string>('');
-  const [total, setTotal] = useState<number | null>(0);
+  const [total, setTotal] = useState<number>(0);
   const [imgId, setImgId] = useState<number | null>(0);
   
   const modImg = images.find((img) => img.id === imgId)?.urls.regular;
@@ -80,7 +80,7 @@ function App() {
       {isloading && <Loader />}
       {error && console.log(" somthing went wrong")}
       {images.length > 0 && <ImageGallery data={images} onClick={handleOpenModal} onId={ (id) => handleImgId(id)} />}
-      {!isloading && images.length < total  && <LoadMoreBtn onClick={handleLoadMore}/>}
+      {!isloading && images.length < (total || 0)  && <LoadMoreBtn onClick={handleLoadMore}/>}
     </>
   );
 }
