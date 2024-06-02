@@ -70,7 +70,7 @@ function App() {
       <SearchBar onSearch={handleSearch} />
       {isLoading && <Loader />}
       {error && console.log("Something went wrong")}
-      {images.length > 0 && <ImageGallery data={images} onClick={handleOpenModal} onId={handleImgId} />}
+      {images.length > 0 && <ImageGallery data={images} onClick={handleOpenModal} onId={(id)=>handleImgId(id)} />}
       {!isLoading && images.length < (total || 0) && <LoadMoreBtn onClick={handleLoadMore} />}
     </>
   );
