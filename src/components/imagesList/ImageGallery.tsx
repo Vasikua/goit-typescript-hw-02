@@ -1,8 +1,7 @@
 import css from './ImageGallery.module.css';
 import ImageCard from '../image/ImageCard'
-import { ImgProps } from "../../types";
+import { ImgProps, ImageGalleryProps } from "../../types";
 import React, {FC} from 'react';
-import {ImageGalleryProps} from '../../types'
 
 const ImageGallery:FC<ImageGalleryProps> = ({ data, onClick, onId })=> {
 

@@ -16,11 +16,11 @@ function App() {
   const [page, setPage] = useState<number>(1);
   const [query, setQuery] = useState<string>('');
   const [total, setTotal] = useState<number>(0);
-  const [imgId, setImgId] = useState<number | null>(null);
+  const [imgId, setImgId] = useState<number|null>(null);
 
   const modImg = images.find((img) => img.id === imgId)?.urls.regular;
 
-  const handleImgId = (id:number):void => {
+  const handleImgId = (id:number)=> {
     setImgId(id);
   };
 
@@ -48,7 +48,7 @@ function App() {
       setTotal(0);
       return;
     }
-    async function getImages() {
+    async function getImages():Promise<void> {
       try {
         setError(false);
         setLoading(true);
@@ -70,7 +70,7 @@ function App() {
       <SearchBar onSearch={handleSearch} />
       {isLoading && <Loader />}
       {error && console.log("Something went wrong")}
-      {images.length > 0 && <ImageGallery data={images} onClick={handleOpenModal} onId={(id)=>handleImgId(id)} />}
+      {images.length > 0 && <ImageGallery data={images} onClick={handleOpenModal} onId={handleImgId} />}
       {!isLoading && images.length < (total || 0) && <LoadMoreBtn onClick={handleLoadMore} />}
     </>
   );

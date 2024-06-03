@@ -25,7 +25,7 @@ export interface ImageModalProps{
 export interface ImageGalleryProps {
   data: ImgProps[];
   onClick: () => void;
-  onId: () => void;
+  onId:()=> void;
 }
 export interface Response {
   result: ImgProps[];

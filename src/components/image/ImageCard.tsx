@@ -15,7 +15,7 @@ const ImageCard :FC<ImageCardProps> = ({data: { id, alt_description, urls: { sma
                     src={small} alt={alt_description}
                     onClick={() => {
                               onClick();
-                              onId(id)
+                              onId(id);
                         }}/>
             </div>
          </>)
