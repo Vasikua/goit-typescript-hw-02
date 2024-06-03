@@ -16,11 +16,11 @@ function App() {
   const [page, setPage] = useState<number>(1);
   const [query, setQuery] = useState<string>('');
   const [total, setTotal] = useState<number>(0);
-  const [imgId, setImgId] = useState<number|null>(null);
+  const [imgId, setImgId] = useState<number | null>(null);
 
   const modImg = images.find((img) => img.id === imgId)?.urls.regular;
 
-  const handleImgId = (id:number)=> {
+  const handleImgId = (id: number): void => {
     setImgId(id);
   };
 
@@ -48,7 +48,7 @@ function App() {
       setTotal(0);
       return;
     }
-    async function getImages():Promise<void> {
+    async function getImages(): Promise<void> {
       try {
         setError(false);
         setLoading(true);
